@@ -7,6 +7,13 @@ import { bannerData } from "./data/bannerData.js";
 import SectionHeader from "./components/SectionHeader/SectionHeader.jsx";
 import NewsGrid from "./components/NewsGrid/NewsGrid.jsx";
 
+/* 🔹 Nuevo: BannerDivider */
+import BannerDivider from "./components/BannerDivider/BannerDivider.jsx";
+
+/* 🔹 Rutas de las imágenes (en src/assets/) */
+import starsBg from "./assets/estrella.png";   // cambia por tu archivo real
+import circleImg from "./assets/circulo.png";   // cambia por tu archivo real
+
 export default function App() {
   const b = bannerData[0];
 
@@ -28,18 +35,30 @@ export default function App() {
           headline={b.headline}
           buttonLabel={b.buttonLabel}
         />
-         <section className="news-section">
-        {/* Subtítulo + botón "See more" */}
-        <SectionHeader
-          title="Latest Updates"
-          buttonLabel="More"
-          onButtonClick={() => console.log("See more clicked")}
-        />
 
-        {/* Grid de noticias */}
-        <NewsGrid />
+        <section className="news-section">
+          {/* Subtítulo + botón "See more" */}
+          <SectionHeader
+            title="Latest Updates"
+            buttonLabel="More"
+            onButtonClick={() => console.log("See more clicked")}
+          />
+
+          {/* Grid de noticias */}
+          <NewsGrid />
         </section>
       </main>
+
+      {/* 🔹 BannerDivider al final de la página */}
+      <BannerDivider
+        bgImage={starsBg}
+        circleImage={circleImg}
+        height={360}
+        overlay
+      />
+
+
+       <NewsGrid />
     </>
   );
 }

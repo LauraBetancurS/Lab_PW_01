@@ -1,0 +1,44 @@
+.banner-divider {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax fondo */
+  background-color: rgb(2, 2, 29);
+  display: grid;
+  place-items: center;
+  overflow: hidden; /* 🔹 evita que el círculo se salga */
+}
+
+/* Sutil velo */
+.banner-divider.has-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.banner-divider__circle {
+  position: absolute; /* 🔹 ahora se queda dentro del contenedor */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(300px, 70vw, 900px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .banner-divider {
+    background-attachment: scroll; /* mejora en iOS */
+  }
+  .banner-divider__circle {
+    width: clamp(120px, 40vw, 280px);
+  }
+}
