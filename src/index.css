@@ -17,6 +17,7 @@ html, body {
   background: radial-gradient(#280a48, #20043d);
   min-height: 100%;
   color: #ebe7ef;
+  overflow-x: hidden; /* evita scroll horizontal con imágenes full width */
 }
 
 /* Encabezados */
@@ -24,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* Main con ancho máximo */
+/* Main con ancho máximo (para secciones de contenido) */
 main {
   width: 90%;
   max-width: 50rem;
@@ -51,4 +52,14 @@ main h2 {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* --- Nueva clase para secciones de ancho completo --- */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }

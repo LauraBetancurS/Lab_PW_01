@@ -1,12 +1,14 @@
 import Navbar from "./components/Navbar/Navbar.jsx";
 import { navbarData } from "./data/navLinks.js";
 
+import Banner from "./components/Banner/Banner.jsx";
+import { bannerData } from "./data/bannerData.js";
 
-function App() {
+export default function App() {
+  const b = bannerData[0];
+
   return (
-    <div>
-
-      
+    <>
       <Navbar
         logoSrc={navbarData.logo.src}
         logoAlt={navbarData.logo.alt}
@@ -14,10 +16,18 @@ function App() {
       />
 
       <main>
-        
+        <Banner
+          bgImage={b.bgImage}
+          bgAlt={b.bgAlt}
+          iconSrc={b.iconSrc}
+          iconAlt={b.iconAlt}
+          gameName={b.gameName}
+          headline={b.headline}
+          buttonLabel={b.buttonLabel}
+        />
+
+        {/* Más contenido aquí */}
       </main>
-    </div>
+    </>
   );
 }
-
-export default App;

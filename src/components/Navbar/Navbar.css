@@ -6,17 +6,21 @@
   background: linear-gradient(90deg, #0b0b0c 0%, #0b0b0c 60%, #101213 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   margin: 0;
+  width: 100%;
 }
 
-/* Contenedor principal de la navbar */
+/* Contenedor principal de la navbar — FULL WIDTH sin desbordar */
 .nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 88px;             /* ↑ más alto (antes 72px) */
-  padding: 0 32px;          /* ↑ más espacio lateral */
+  width: 100%;
+  /* ❌ NO usar margin-left con width:100%; causaba overflow */
+  margin: 0;                 /* <- importante para quitar el scroll */
+  height: 88px;
+  padding-left: 20px;        /* 👈 ajusta aquí qué tan “a la izq.” ves el logo */
+  padding-right: 32px;       /* margen derecho */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;    /* asegura que padding no sume al ancho total */
 }
 
 /* Logo + marca */
@@ -24,12 +28,13 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  margin: 0;                 /* sin márgenes extra */
 }
 
-/* Logo más grande */
+/* Logo */
 .nav__logo {
   display: block;
-  height: 70px;             /* ↑ antes 36px */
+  height: 65px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 6px rgba(77, 187, 255, 0.25));
@@ -39,7 +44,7 @@
 .nav__list {
   list-style: none;
   display: flex;
-  gap: 32px;                /* ↑ separación entre links */
+  gap: 32px;
   margin: 0;
   padding: 0;
 }
@@ -48,13 +53,13 @@
 .nav__link {
   position: relative;
   color: #cfd3da;
-  font-size: 18px;          /* ↑ antes 16px */
+  font-size: 18px;
   line-height: 1;
-  padding: 12px 0;          /* ↑ más espacio vertical */
+  padding: 12px 0;
   transition: color .2s ease;
   user-select: none;
   cursor: default;
-  font-family: inherit;     /* usa la fuente global (Microsoft YaHei, etc.) */
+  font-family: "Microsoft YaHei", "Arial", "Helvetica", sans-serif;
 }
 
 /* Hover / focus */
@@ -64,12 +69,12 @@
   outline: none;
 }
 
-/* Subrayado azul tipo HoYoverse */
+/* Subrayado azul */
 .nav__underline {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px;            /* ajustado por mayor altura */
+  bottom: -10px;
   height: 3px;
   border-radius: 2px;
   background: #4da8ff;
@@ -77,7 +82,6 @@
   transform-origin: left;
   transition: transform .25s ease;
 }
-
 .nav__link:hover .nav__underline,
 .nav__link:focus .nav__underline {
   transform: scaleX(0.6);
@@ -94,8 +98,9 @@
 /* Responsive */
 @media (max-width: 768px) {
   .nav {
-    height: 72px;           /* un poco más baja en tablet */
-    padding: 0 20px;
+    height: 72px;
+    padding-left: 14px;   /* 👈 ajusta margen interior en tablet */
+    padding-right: 20px;
   }
   .nav__logo {
     height: 36px;
@@ -114,8 +119,9 @@
 
 @media (max-width: 480px) {
   .nav {
-    height: 64px;           /* aún más compacta en móvil */
-    padding: 0 14px;
+    height: 64px;
+    padding-left: 10px;   /* 👈 margen interior en móvil */
+    padding-right: 14px;
   }
   .nav__logo {
     height: 30px;
