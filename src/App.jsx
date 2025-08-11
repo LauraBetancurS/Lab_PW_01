@@ -14,6 +14,10 @@ import BannerDivider from "./components/BannerDivider/BannerDivider.jsx";
 import starsBg from "./assets/estrella.png"; // cambia por tu archivo real
 import circleImg from "./assets/circulo.png"; // cambia por tu archivo real
 
+
+import { productsData } from "./data/productsData.js";
+import ProductCard from "./components/ProductCard/ProductCard.jsx";
+
 export default function App() {
   const b = bannerData[0];
 
@@ -58,6 +62,17 @@ export default function App() {
       />
 
       <SectionHeader title="Our Products" />
+
+      <ProductCard {...productsData [0]} />
+
+
+
+
+
+       
+          
+           
+
     </>
   );
 }
