@@ -28,7 +28,7 @@ export default function App() {
           headline={b.headline}
           buttonLabel={b.buttonLabel}
         />
-
+         <section className="news-section">
         {/* Subtítulo + botón "See more" */}
         <SectionHeader
           title="Latest Updates"
@@ -38,6 +38,7 @@ export default function App() {
 
         {/* Grid de noticias */}
         <NewsGrid />
+        </section>
       </main>
     </>
   );

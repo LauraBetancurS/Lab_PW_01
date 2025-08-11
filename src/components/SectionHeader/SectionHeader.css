@@ -2,15 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 32px auto 16px;
+  margin: 80px auto 16px;
   max-width: 1200px;
   padding: 0 16px;
 }
 
 .section-header__title {
-  font-size: 3rem; /* tamaño de título normal */
+  font-size: 3rem;
   font-weight: 700;
   color: #000;
+  margin-left: -176px;  /* mueve el texto más a la derecha */
 }
 
 .section-header__btn {
@@ -18,12 +19,13 @@
   color: #0066ff;
   border: none;
   border-radius: 30px;
-    width: 134px;
+  width: 134px;
   padding: 10px 14px;
   font-size: 22px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s ease;
+  margin-right: -160px; /* mueve el botón más a la izquierda */
 }
 
 .section-header__btn:hover {
