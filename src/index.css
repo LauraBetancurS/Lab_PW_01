@@ -1,0 +1,54 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML y body sin espacio extra */
+html, body {
+  font-family: "Microsoft YaHei", "Arial", "Helvetica", sans-serif;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  background: radial-gradient(#280a48, #20043d);
+  min-height: 100%;
+  color: #ebe7ef;
+}
+
+/* Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* Main con ancho máximo */
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin: auto;
+}
+
+/* Ejemplo de sección core concepts */
+#core-concepts {
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #140524;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #a18aba;
+}
+
+#core-concepts ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
