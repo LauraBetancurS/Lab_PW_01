@@ -23,7 +23,7 @@
   position: relative;
   margin: -34px auto 0;        /* lo sube sobre el fondo */
   width: 100%;
-  background: #ffffff;
+  background: #ececec;
   border-radius: 0px;
   box-shadow: 0 8px 22px rgba(0,0,0,.15);
   padding: 30px 40px 40px 50px;
@@ -83,7 +83,7 @@
 /* Botón More (estilo pill como la referencia) */
 /* Botón More (estilo pill más grande) */
 .product-card__cta {
-  background: #f5f5f5;           /* fondo gris claro */
+  background: #dfdfdf;           /* fondo gris claro */
   color: #2563eb;                /* texto azul */
   border: 2px solid transparent; /* 🔹 borde invisible por defecto */
   border-radius: 999px;          /* forma “píldora” */
