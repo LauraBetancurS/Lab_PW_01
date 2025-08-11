@@ -10,7 +10,7 @@ export default function BannerDividerStarships({
     <section
       className={`bd-starships ${className}`}
       style={{ "--bd-height": `${height}px`, "--bd-tint": tint }}
-      aria-hidden="true"
+      
     >
       <img className="bd-starships__bg" src={bgImage} alt="" />
       <div className="bd-starships__overlay" />

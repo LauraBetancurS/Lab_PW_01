@@ -21,7 +21,7 @@ export default function Footer() {
         <img src={logo} alt="Hoyoverse Logo" />
       </div>
 
-      {/* 🔹 Fila inferior: texto */}
+     
       <div className="footer__text">
         <p>Copyright © COGNOSPHERE. All Rights Reserved.</p>
       </div>

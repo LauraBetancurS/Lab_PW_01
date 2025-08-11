@@ -7,8 +7,7 @@ export default function SectionHeader({ title, buttonLabel, onButtonClick }) {
       <h2 className="section-header__title">{title}</h2>
       <button 
         className="section-header__btn" 
-        onClick={onButtonClick}
-        aria-label={buttonLabel}
+        
       >
         {buttonLabel}
       </button>

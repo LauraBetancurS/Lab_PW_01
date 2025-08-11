@@ -8,7 +8,7 @@ export default function ProductsGrid() {
   const items = productsData.slice(0, 6);
 
   return (
-    <section className="products-grid" aria-label="Our products">
+    <section className="products-grid" >
       {items.map((p) => (
         <ProductCard key={p.id} {...p} />
       ))}

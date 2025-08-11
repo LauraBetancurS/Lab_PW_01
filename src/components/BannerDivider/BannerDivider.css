@@ -24,7 +24,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(300px, 70vw, 900px);
+  /* Tamaño aumentado */
+  width: clamp(80px, 90vw, 1200px);
   height: auto;
   display: block;
   filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
@@ -35,5 +36,6 @@
 
 @media (max-width: 768px) {
   .banner-divider { background-attachment: scroll; }
-  .banner-divider__circle { width: clamp(180px, 50vw, 420px); }
+  /* También aumentado en móviles */
+  .banner-divider__circle { width: clamp(220px, 70vw, 600px); }
 }

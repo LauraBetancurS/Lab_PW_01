@@ -12,7 +12,6 @@
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
-/* Evita que reglas antiguas con aspect-ratio interfieran */
 .news-card { aspect-ratio: auto !important; }
 
 /* Hover */
