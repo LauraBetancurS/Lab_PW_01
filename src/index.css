@@ -16,7 +16,7 @@ html, body {
   -webkit-text-size-adjust: 100%;
   background-color: #ffffff; /* Fondo blanco */
   min-height: 100%;
-  color: #ffffff; /* Texto negro */
+  color: #000000; /* Texto negro */
   overflow-x: hidden; /* evita scroll horizontal con imágenes full width */
 }
 
@@ -26,11 +26,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff; /* Encabezados en negro */
 }
 
-/* Main con ancho máximo (para secciones de contenido) */
+/* Main general */
 main {
   width: 90%;
-  max-width: 50rem;
   margin: auto;
+}
+
+/* Si quieres secciones limitadas de ancho, aplica esta clase */
+main.limited {
+  max-width: 50rem;
 }
 
 /* Ejemplo de sección core concepts */

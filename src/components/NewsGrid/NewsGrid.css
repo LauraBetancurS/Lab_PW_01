@@ -1,34 +1,51 @@
-/* Contenedor ancho para que las cards sean más "gorditas" */
+/* Contenedor principal centrado */
 .news-grid {
-  /* El truco para que cada card sea más ancha sin cambiar # de columnas
-     es subir este max-width y mantener 4 cols: */
-  max-width: 1600px;         /* ↑ más ancho que 1200px */
-  margin: 16px auto 56px;
-  padding: 0 16px;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* 4 columnas en la fila 1 */
-  gap: 28px;                               /* respiración entre cards */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
 }
 
-/* La card marcada como wide ocupa 2 columnas (misma altura que el resto) */
-.news-grid .news-card--wide {
+/* Grid interno con tarjetas más anchas */
+.news-grid__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;                     /* más espacio entre tarjetas */
+  max-width: 1500px;              /* antes 1200px → ahora más ancho */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Tarjeta doble ancho (para segunda fila) */
+.news-card--wide {
   grid-column: span 2;
 }
 
-/* Breakpoints: mantenemos 4->3->2->1 sin romper la idea base */
-@media (max-width: 1400px) {
-  .news-grid { max-width: 1400px; }
+/* Responsivo */
+@media (max-width: 1100px) {
+  .news-grid__inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .news-card--wide {
+    grid-column: span 2;
+  }
 }
-@media (max-width: 1200px) {
-  .news-grid { grid-template-columns: repeat(3, 1fr); }
-  .news-grid .news-card--wide { grid-column: span 2; }
+
+@media (max-width: 800px) {
+  .news-grid__inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .news-card--wide {
+    grid-column: span 2;
+  }
 }
-@media (max-width: 900px) {
-  .news-grid { grid-template-columns: repeat(2, 1fr); }
-  .news-grid .news-card--wide { grid-column: span 2; } /* ocupa fila completa */
-}
-@media (max-width: 560px) {
-  .news-grid { grid-template-columns: 1fr; }
-  .news-grid .news-card--wide { grid-column: span 1; }
+
+@media (max-width: 520px) {
+  .news-grid__inner {
+    grid-template-columns: 1fr;
+  }
+  .news-card--wide {
+    grid-column: span 1;
+  }
 }
