@@ -24,11 +24,9 @@ export default function Banner({
 
       {/* Contenido */}
       <div className="banner__content">
-        <div className="banner__badge">
-          <img className="banner__icon" src={iconSrc} alt={iconAlt} />
-          <span className="banner__game">{gameName}</span>
-        </div>
-
+       
+        <img className="banner__icon" src={iconSrc} alt={iconAlt} />
+         <span className="banner__game">{gameName}</span>
         <h1 className="banner__headline">{headline}</h1>
 
         <button className="banner__cta" type="button" aria-label={buttonLabel}>

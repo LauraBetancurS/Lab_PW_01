@@ -23,10 +23,14 @@
   position: relative;
   z-index: 1;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 130px;
   padding: 56px 24px 32px;
   display: grid;
-  gap: 20px;
+  gap: 50px;
+
+  /* --- NUEVO: alinear a la izquierda --- */
+  justify-items: start;
+  padding-left:5px; /* mueve todo el bloque un poco a la izquierda */
 }
 
 /* Icono + nombre en columna */
@@ -42,8 +46,8 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
   width: fit-content;
 }
-.banner__icon { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; }
-.banner__game { font-weight: 800; font-size: 22px; text-align: center; }
+.banner__icon { width: 68px; height: 68px; border-radius: 10px; object-fit: cover; }
+.banner__game { font-weight: 800; font-size: 44px; text-align: center; }
 
 .banner__headline {
   max-width: 700px;
@@ -52,24 +56,32 @@
   font-size: clamp(28px, 5vw, 56px);
   line-height: 1.1;
   text-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  line-height: 90px;
 }
 
 .banner__cta {
   margin-top: 8px;
-  width: fit-content;
-  padding: 14px 28px;
-  border-radius: 28px;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(28,28,30,0.45);
+  width: 280px;
+  padding: 28px 40px;
+  border-radius: 100px;
+  border: 1px solid rgba(25, 25, 26, 0);
+  background: rgba(25, 25, 26, 0.45);
   color: #fff;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 700;
   letter-spacing: .2px;
-  cursor: default;
+  cursor: pointer;
   transition: transform .15s, background .2s, border-color .2s;
 }
+
 .banner__cta:hover,
-.banner__cta:focus { background: rgba(28,28,30,0.6); border-color: rgba(255,255,255,0.28); transform: translateY(-1px); outline: none; }
+.banner__cta:focus {
+  background: rgba(25, 25, 26, 0.3); /* menos opaco que 0.45 */
+  border-color: #fff; /* borde blanco */
+  transform: translateY(-1px);
+  outline: none;
+}
+
 
 @media (max-width: 600px) {
   .banner { min-height: 68vh; }
