@@ -4,7 +4,7 @@ import "./Navbar.css";
 export default function Navbar({ logoSrc, logoAlt, links = [], className = "" }) {
   return (
     <header className={`nav-root ${className}`}>
-      <nav className="nav" aria-label="Primary">
+      <nav className="nav" >
         <div className="nav__brand">
           <img className="nav__logo" src={logoSrc} alt={logoAlt || "Site logo"} />
         </div>
