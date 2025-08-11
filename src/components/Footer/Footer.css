@@ -1,12 +1,13 @@
 .footer {
-  background-color: #000; /* fondo negro */
+  background-color: #000; /* Fondo negro */
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 16px;
-  gap: 24px;
+  padding: 70px 16px; /* Mucho más alto */
+  gap: 30px; /* Más espacio entre secciones */
   font-family: Arial, sans-serif;
+  min-height: 260px; /* Altura mínima aún mayor */
 }
 
 /* 🔹 Links superiores */
@@ -14,8 +15,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
-  font-size: 15px;
+  gap: 28px; /* Más espacio entre links */
+  font-size: 22px; /* Texto más grande */
   color: #ccc;
 }
 
@@ -30,12 +31,12 @@
 
 /* 🔹 Logo */
 .footer__logo img {
-  height: 42px; /* Ajusta tamaño del logo */
+  height: 80px; /* Logo mucho más grande */
   object-fit: contain;
 }
 
 /* 🔹 Texto inferior */
 .footer__text {
-  font-size: 13px;
+  font-size: 18px; /* Texto más grande */
   color: #aaa;
 }
