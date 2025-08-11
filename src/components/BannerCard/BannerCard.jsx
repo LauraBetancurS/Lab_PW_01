@@ -15,7 +15,7 @@ export default function BannerCard() {
           className="banner-card"
           style={{ backgroundImage: `url(${b.bgImage})` }}
           title={b.bgAlt}
-          aria-label={b.bgAlt}
+          
         />
       ))}
     </div>

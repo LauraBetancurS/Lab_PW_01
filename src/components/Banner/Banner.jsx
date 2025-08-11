@@ -15,7 +15,7 @@ export default function Banner({
   buttonLabel
 }) {
   return (
-    <section className="banner full-bleed" aria-label="Featured update">
+    <section className="banner full-bleed" >
       {/* Fondo */}
       <img className="banner__bg" src={bgImage} alt={bgAlt} />
 
@@ -26,12 +26,12 @@ export default function Banner({
 
         <h1 className="banner__headline">{headline}</h1>
 
-        <button className="banner__cta" type="button" aria-label={buttonLabel}>
+        <button className="banner__cta" type="button" >
           {buttonLabel}
         </button>
       </div>
 
-      {/* Mini-cards abajo a la derecha */}
+      {/* Mini banner -cards abajo a la derecha :) */}
       <div className="banner__thumbs">
         <BannerCard />
       </div>

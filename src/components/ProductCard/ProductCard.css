@@ -97,7 +97,7 @@
 
 .product-card__cta:hover,
 .product-card__cta:focus {
-  background: #eaeaea;
+  background: #dfdfdf;
   border-color: #2563eb;         /* 🔹 borde azul en hover/focus */
   transform: translateY(-1px);
   outline: none;

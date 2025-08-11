@@ -1,4 +1,4 @@
-/* Barra fija arriba, sin espacios */
+
 .nav-root {
   position: sticky;
   top: 0;
@@ -9,18 +9,18 @@
   width: 100%;
 }
 
-/* Contenedor principal de la navbar — FULL WIDTH sin desbordar */
+
 .nav {
   width: 100%;
-  /* ❌ NO usar margin-left con width:100%; causaba overflow */
-  margin: 0;                 /* <- importante para quitar el scroll */
+ 
+  margin: 0;               
   height: 88px;
-  padding-left: 20px;        /* 👈 ajusta aquí qué tan “a la izq.” ves el logo */
+  padding-left: 20px;        /*  ajusta aquí qué tan “a la izq.” ves el logo */
   padding-right: 32px;       /* margen derecho */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-sizing: border-box;    /* asegura que padding no sume al ancho total */
+  box-sizing: border-box;  
 }
 
 /* Logo + marca */
@@ -28,7 +28,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin: 0;                 /* sin márgenes extra */
+  margin: 0;               
 }
 
 /* Logo */
@@ -49,7 +49,7 @@
   padding: 0;
 }
 
-/* Link (solo visual, sin navegación) */
+/* Link  */
 .nav__link {
   position: relative;
   color: #cfd3da;
@@ -93,47 +93,4 @@
 }
 .nav__link.is-active .nav__underline {
   transform: scaleX(0.9);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav {
-    height: 72px;
-    padding-left: 14px;   /* 👈 ajusta margen interior en tablet */
-    padding-right: 20px;
-  }
-  .nav__logo {
-    height: 36px;
-  }
-  .nav__list {
-    gap: 22px;
-  }
-  .nav__link {
-    font-size: 16px;
-    padding: 10px 0;
-  }
-  .nav__underline {
-    bottom: -8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav {
-    height: 64px;
-    padding-left: 10px;   /* 👈 margen interior en móvil */
-    padding-right: 14px;
-  }
-  .nav__logo {
-    height: 30px;
-  }
-  .nav__list {
-    gap: 14px;
-  }
-  .nav__link {
-    font-size: 14px;
-    padding: 8px 0;
-  }
-  .nav__underline {
-    bottom: -6px;
-  }
 }

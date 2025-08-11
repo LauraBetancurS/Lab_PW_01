@@ -1,9 +1,9 @@
-// src/data/navLinks.js
+
 import Logo from "../assets/Hoyoverse_Logo.png";
 
 export const navbarData = {
   logo: {
-    src: Logo, // <- ahora Vite resuelve y sirve la imagen
+    src: Logo, 
     alt: "HoYoverse logo"
   },
   links: [
