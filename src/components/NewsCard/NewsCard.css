@@ -1,75 +1,108 @@
+/* ---- CARD BASE ---- */
 .news-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;          /* Responsivo por relación de aspecto */
-  border-radius: 18px;
+  height: 340px; /* Altura fija más grande */
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,.30);
   background: #0b0b0c;
   color: #fff;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.35),
+    0 2px 0 rgba(255,255,255,.06) inset;
+  transition: transform .18s ease, box-shadow .18s ease;
   isolation: isolate;
-  transition: transform .2s ease, box-shadow .2s ease;
 }
-
 .news-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 36px rgba(0,0,0,.45),
+    0 2px 0 rgba(255,255,255,.08) inset;
 }
 
-/* Imagen de fondo */
+/* ---- BACKGROUND IMAGE ---- */
 .news-card__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(1.02) contrast(1.02);
 }
 
-/* Tag arriba derecha */
+/* ---- TYPE TAG (chip esquina superior derecha) ---- */
 .news-card__tag {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  z-index: 1;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
   padding: 6px 12px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, .92);
-  color: #0b61ff;
+  border-radius: 16px;
+  background: rgba(255,255,255,.96);
+  color: #02b4b2;                    /* turquesa como “Product” de la captura */
   font-size: 12px;
   font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  user-select: none;
 }
 
-/* Colores por tipo */
-.news-card__tag[data-type="Product"] { color: #0bb3a7; }
+/* variaciones por tipo (opcional) */
 .news-card__tag[data-type="Company"] { color: #7a5cff; }
 .news-card__tag[data-type="News"]    { color: #0b61ff; }
-.news-card__tag[data-type="Update"]  { color: #00b0ff; }
+.news-card__tag[data-type="Update"]  { color: #00a8ff; }
 
-/* Overlay + textos inferior */
+/* ---- OVERLAY + TEXTOS ABAJO ---- */
 .news-card__content {
   position: absolute;
   inset: auto 0 0 0;
-  padding: 16px;
+  padding: 16px 16px 18px;
   background: linear-gradient(
     180deg,
     rgba(0,0,0,0) 0%,
-    rgba(0,0,0,.45) 32%,
+    rgba(0,0,0,.40) 36%,
     rgba(0,0,0,.78) 100%
   );
+  z-index: 1;
 }
 
 .news-card__game {
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   font-size: 14px;
-  color: #cbd5e1;
+  font-weight: 700;
+  color: #d9e2ec;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
 }
 
+/* Título con subrayado tenue y truncado a 2 líneas */
 .news-card__title {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.25;
   font-weight: 800;
+  font-size: 17px;
+  line-height: 1.25;
   text-decoration: underline;
   text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,.35);
+  color: #ffffff;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;             /* 2 líneas + ellipsis */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
+/* ---- WIDE CARD (el tamaño lo manda el grid con grid-column) ---- */
+.news-card--wide {
+  /* sin estilos extra aquí; el ancho se controla en NewsGrid.css */
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .news-card { border-radius: 18px; }
+  .news-card__title { font-size: 16px; }
+}
+@media (max-width: 600px) {
+  .news-card { aspect-ratio: 16 / 11; }
+  .news-card__tag { top: 10px; right: 10px; padding: 5px 10px; }
+  .news-card__content { padding: 14px; }
+}
