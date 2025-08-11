@@ -68,3 +68,19 @@ main h2 {
   margin-left: -50vw;
   margin-right: -50vw;
 }
+
+.container {
+  width: 90%;
+  margin: 0 auto;     /* centra y alinea igual que <main> */
+}
+.products-section {
+  padding-top: 1rem;  /* opcional, espacio con el divider */
+}
+
+
+.products-section__header{
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000;
+  margin-left: -210px;  /* mueve el texto más a la derecha */
+}

@@ -1,0 +1,8 @@
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 1.5rem; /* espacio entre cards */
+  max-width: 1600px; /* más ancho total */
+  margin: 0 auto; /* centra el grid */
+}
+
