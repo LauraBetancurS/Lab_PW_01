@@ -1,41 +1,33 @@
+/* Contenedor ancho para que las cards sean más "gorditas" */
 .news-grid {
-  max-width: 1200px;
-  margin: 12px auto 56px;
-  padding: 0 30px;
+  /* El truco para que cada card sea más ancha sin cambiar # de columnas
+     es subir este max-width y mantener 4 cols: */
+  max-width: 1600px;         /* ↑ más ancho que 1200px */
+  margin: 16px auto 56px;
+  padding: 0 16px;
+
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);  /* 4 columnas en la fila 1 */
+  gap: 28px;                               /* respiración entre cards */
 }
 
-.news-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* mantiene proporción y llena la card */
-}
-
-/* Fila 2: última ocupa doble ancho */
+/* La card marcada como wide ocupa 2 columnas (misma altura que el resto) */
 .news-grid .news-card--wide {
   grid-column: span 2;
 }
 
-/* Pequeñas mejoras visuales para que el layout “respire” */
-.news-grid > .news-card {
-  background-clip: padding-box;
+/* Breakpoints: mantenemos 4->3->2->1 sin romper la idea base */
+@media (max-width: 1400px) {
+  .news-grid { max-width: 1400px; }
 }
-
-/* Responsive: 3 cols (la wide sigue siendo de 2) */
 @media (max-width: 1200px) {
   .news-grid { grid-template-columns: repeat(3, 1fr); }
   .news-grid .news-card--wide { grid-column: span 2; }
 }
-
-/* Responsive: 2 cols (la wide ocupa 2 => una fila completa) */
 @media (max-width: 900px) {
   .news-grid { grid-template-columns: repeat(2, 1fr); }
-  .news-grid .news-card--wide { grid-column: span 2; }
+  .news-grid .news-card--wide { grid-column: span 2; } /* ocupa fila completa */
 }
-
-/* Móvil: 1 col */
 @media (max-width: 560px) {
   .news-grid { grid-template-columns: 1fr; }
   .news-grid .news-card--wide { grid-column: span 1; }

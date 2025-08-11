@@ -4,12 +4,14 @@ import NewsCard from "../NewsCard/NewsCard.jsx";
 import { newsData } from "../../data/newsData.js";
 
 /**
- * Grid con 4 columnas en la fila 1 y,
- * en la segunda fila 3 tarjetas donde la última ocupa 2 columnas.
+ * Fila 1: 4 cards
+ * Fila 2: 3 cards (la última con doble ancho -> wide: true en data)
+ * Para que sean más anchas sin cambiar el conteo, usamos .full-bleed
+ * y aumentamos el max-width del grid, manteniendo 4 columnas.
  */
 export default function NewsGrid() {
   return (
-    <section className="news-grid" aria-label="Latest updates">
+    <section className="news-grid full-bleed" aria-label="Latest updates">
       {newsData.map((item) => (
         <NewsCard
           key={item.id}
