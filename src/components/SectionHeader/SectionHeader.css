@@ -1,0 +1,30 @@
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px auto 16px;
+  max-width: 1200px;
+  padding: 0 16px;
+}
+
+.section-header__title {
+  font-size: 1.8rem; /* tamaño de título normal */
+  font-weight: 700;
+  color: #000;
+}
+
+.section-header__btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #0066ff;
+  border: none;
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.section-header__btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}

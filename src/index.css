@@ -14,15 +14,16 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background: radial-gradient(#280a48, #20043d);
+  background-color: #ffffff; /* Fondo blanco */
   min-height: 100%;
-  color: #ebe7ef;
+  color: #ffffff; /* Texto negro */
   overflow-x: hidden; /* evita scroll horizontal con imágenes full width */
 }
 
 /* Encabezados */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
+  color: #ffffff; /* Encabezados en negro */
 }
 
 /* Main con ancho máximo (para secciones de contenido) */
@@ -36,14 +37,14 @@ main {
 #core-concepts {
   padding: 2rem;
   border-radius: 6px;
-  background-color: #140524;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background-color: #f5f5f5; /* Fondo gris claro para resaltar */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 main h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #a18aba;
+  color: #333333; /* Gris oscuro */
 }
 
 #core-concepts ul {

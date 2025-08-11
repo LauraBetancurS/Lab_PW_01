@@ -4,6 +4,8 @@ import { navbarData } from "./data/navLinks.js";
 import Banner from "./components/Banner/Banner.jsx";
 import { bannerData } from "./data/bannerData.js";
 
+import SectionHeader from "./components/SectionHeader/SectionHeader.jsx";
+
 export default function App() {
   const b = bannerData[0];
 
@@ -24,6 +26,13 @@ export default function App() {
           gameName={b.gameName}
           headline={b.headline}
           buttonLabel={b.buttonLabel}
+        />
+
+        {/* Subtítulo + botón "See more" */}
+        <SectionHeader
+          title="Latest Updates"
+          buttonLabel="More"
+          onButtonClick={() => console.log("See more clicked")}
         />
 
         {/* Más contenido aquí */}
