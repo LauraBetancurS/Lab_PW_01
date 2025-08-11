@@ -5,6 +5,7 @@ import Banner from "./components/Banner/Banner.jsx";
 import { bannerData } from "./data/bannerData.js";
 
 import SectionHeader from "./components/SectionHeader/SectionHeader.jsx";
+import NewsGrid from "./components/NewsGrid/NewsGrid.jsx";
 
 export default function App() {
   const b = bannerData[0];
@@ -35,7 +36,8 @@ export default function App() {
           onButtonClick={() => console.log("See more clicked")}
         />
 
-        {/* Más contenido aquí */}
+        {/* Grid de noticias */}
+        <NewsGrid />
       </main>
     </>
   );

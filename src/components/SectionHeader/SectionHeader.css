@@ -8,7 +8,7 @@
 }
 
 .section-header__title {
-  font-size: 1.8rem; /* tamaño de título normal */
+  font-size: 3rem; /* tamaño de título normal */
   font-weight: 700;
   color: #000;
 }
@@ -17,9 +17,10 @@
   background: rgba(0, 0, 0, 0.05);
   color: #0066ff;
   border: none;
-  border-radius: 12px;
-  padding: 6px 14px;
-  font-size: 0.9rem;
+  border-radius: 30px;
+    width: 134px;
+  padding: 10px 14px;
+  font-size: 22px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s ease;
