@@ -11,8 +11,8 @@ import NewsGrid from "./components/NewsGrid/NewsGrid.jsx";
 import BannerDivider from "./components/BannerDivider/BannerDivider.jsx";
 
 /* 🔹 Rutas de las imágenes (en src/assets/) */
-import starsBg from "./assets/estrella.png";   // cambia por tu archivo real
-import circleImg from "./assets/circulo.png";   // cambia por tu archivo real
+import starsBg from "./assets/estrella.png"; // cambia por tu archivo real
+import circleImg from "./assets/circulo.png"; // cambia por tu archivo real
 
 export default function App() {
   const b = bannerData[0];
@@ -57,8 +57,7 @@ export default function App() {
         overlay
       />
 
-
-       <NewsGrid />
+      <SectionHeader title="Our Products" />
     </>
   );
 }
