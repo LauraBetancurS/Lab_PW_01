@@ -7,18 +7,21 @@ import { bannerData } from "./data/bannerData.js";
 import SectionHeader from "./components/SectionHeader/SectionHeader.jsx";
 import NewsGrid from "./components/NewsGrid/NewsGrid.jsx";
 
-/* 🔹 Nuevo: BannerDivider */
+/* 🔹 BannerDivider existente */
 import BannerDivider from "./components/BannerDivider/BannerDivider.jsx";
 
+/* 🔹 Nuevo contenedor: BannerDividerStarships + Cards encima */
+import StarshipSection from "./components/StarshipSection/StarshipSection.jsx";
+import { starshipCardsData } from "./data/starshipCardsData.js";
+
 /* 🔹 Rutas de las imágenes (en src/assets/) */
-import starsBg from "./assets/estrella.png"; // cambia por tu archivo real
-import circleImg from "./assets/circulo.png"; // cambia por tu archivo real
+import starsBg from "./assets/estrella.png";
+import circleImg from "./assets/circulo.png";
 
-
-import { productsData } from "./data/productsData.js";
-import ProductCard from "./components/ProductCard/ProductCard.jsx";
 import ProductsGrid from "./components/ProductsGrid/ProductsGrid.jsx";
 
+/* 🔹 Footer */
+import Footer from "./components/Footer/Footer.jsx";
 
 export default function App() {
   const b = bannerData[0];
@@ -43,19 +46,16 @@ export default function App() {
         />
 
         <section className="news-section">
-          {/* Subtítulo + botón "See more" */}
           <SectionHeader
             title="Latest Updates"
             buttonLabel="More"
             onButtonClick={() => console.log("See more clicked")}
           />
-
-          {/* Grid de noticias */}
           <NewsGrid />
         </section>
       </main>
 
-      {/* 🔹 BannerDivider al final de la página */}
+      {/* 🔹 Divider existente (full-width) */}
       <BannerDivider
         bgImage={starsBg}
         circleImage={circleImg}
@@ -63,19 +63,23 @@ export default function App() {
         overlay
       />
 
+      {/* 🔹 Sección de productos */}
       <section className="container products-section">
-  <SectionHeader title="Our Products" />
-  <ProductsGrid />
-</section>
+        <SectionHeader title="Our Products" />
+        <ProductsGrid />
+      </section>
 
+      {/* 🔹 StarshipSection = BannerDividerStarships + 2 cards encima */}
+      <StarshipSection
+        items={starshipCardsData}
+        bgImage={starsBg}
+        circleImage={circleImg}
+        height={500}
+        overlay
+      />
 
-
-
-
-       
-          
-           
-
+      {/* 🔹 Footer */}
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,99 @@
+/* Grid de 2 columnas centrado */
+.starship-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Card “glass” */
+.starship-card {
+  position: relative;
+  min-height: 350px; /* antes: 220px → más alta */
+  border-radius: 16px;
+  padding: 32px 28px 32px 30px; /* más padding para que respire */
+  background: radial-gradient(
+    120% 120% at 10% 10%,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25),
+    inset 0 0 1px rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background 0.2s ease;
+}
+
+.starship-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35),
+    inset 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+/* Contenido */
+.starship-card__body {
+  display: grid;
+  gap: 18px; /* un poco más de espacio entre elementos */
+}
+
+.starship-card__title {
+  margin: 0;
+  font-size: clamp(40px, 2.6vw, 36px); /* texto un poco más grande */
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.starship-card__underline {
+  width: 22px; /* más ancho */
+  height: 5px; /* más grueso */
+  border-radius: 2px;
+  background: #6aa6ff; /* azul tenue */
+  display: inline-block;
+}
+
+/* Botón redondo con flecha en esquina inferior derecha */
+.starship-card__circle {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 64px; /* más grande */
+  height: 64px; /* más grande */
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #6aa6ff 0%, #4c7cff 100%);
+  box-shadow: 0 8px 18px rgba(78, 124, 255, 0.35);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.starship-card__circle:hover,
+.starship-card__circle:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(78, 124, 255, 0.45);
+  outline: none;
+  filter: brightness(1.05);
+}
+
+.starship-card__arrow {
+  display: block;
+}
+
+/* Responsive: 1 columna */
+@media (max-width: 780px) {
+  .starship-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .starship-card {
+    min-height: 260px; /* un poco más baja en móvil */
+  }
+}

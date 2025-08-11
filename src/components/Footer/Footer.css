@@ -1,0 +1,41 @@
+.footer {
+  background-color: #000; /* fondo negro */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  gap: 24px;
+  font-family: Arial, sans-serif;
+}
+
+/* 🔹 Links superiores */
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.footer__links span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer__links span:hover {
+  color: #fff;
+}
+
+/* 🔹 Logo */
+.footer__logo img {
+  height: 42px; /* Ajusta tamaño del logo */
+  object-fit: contain;
+}
+
+/* 🔹 Texto inferior */
+.footer__text {
+  font-size: 13px;
+  color: #aaa;
+}
