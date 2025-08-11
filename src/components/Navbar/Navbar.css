@@ -1,65 +1,75 @@
+/* Barra fija arriba, sin espacios */
 .nav-root {
   position: sticky;
   top: 0;
   z-index: 50;
   background: linear-gradient(90deg, #0b0b0c 0%, #0b0b0c 60%, #101213 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 0;
 }
 
+/* Contenedor principal de la navbar */
 .nav {
   max-width: 1200px;
   margin: 0 auto;
-  height: 72px;
-  padding: 0 24px;
+  height: 88px;             /* ↑ más alto (antes 72px) */
+  padding: 0 32px;          /* ↑ más espacio lateral */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Logo + marca */
 .nav__brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
 }
 
+/* Logo más grande */
 .nav__logo {
   display: block;
-  height: 36px;
+  height: 70px;             /* ↑ antes 36px */
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 6px rgba(77, 187, 255, 0.25));
 }
 
+/* Lista de enlaces */
 .nav__list {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 32px;                /* ↑ separación entre links */
   margin: 0;
   padding: 0;
 }
 
+/* Link (solo visual, sin navegación) */
 .nav__link {
   position: relative;
   color: #cfd3da;
-  font-size: 16px;
+  font-size: 18px;          /* ↑ antes 16px */
   line-height: 1;
-  padding: 8px 0;
+  padding: 12px 0;          /* ↑ más espacio vertical */
   transition: color .2s ease;
   user-select: none;
-  cursor: default; /* sin navegación */
+  cursor: default;
+  font-family: inherit;     /* usa la fuente global (Microsoft YaHei, etc.) */
 }
 
+/* Hover / focus */
 .nav__link:hover,
 .nav__link:focus {
   color: #e9edf5;
   outline: none;
 }
 
+/* Subrayado azul tipo HoYoverse */
 .nav__underline {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -8px;
+  bottom: -10px;            /* ajustado por mayor altura */
   height: 3px;
   border-radius: 2px;
   background: #4da8ff;
@@ -73,6 +83,7 @@
   transform: scaleX(0.6);
 }
 
+/* Estado activo */
 .nav__link.is-active {
   color: #a7c8ff;
 }
@@ -80,13 +91,43 @@
   transform: scaleX(0.9);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .nav { height: 64px; padding: 0 16px; }
-  .nav__list { gap: 18px; }
-  .nav__logo { height: 30px; }
+  .nav {
+    height: 72px;           /* un poco más baja en tablet */
+    padding: 0 20px;
+  }
+  .nav__logo {
+    height: 36px;
+  }
+  .nav__list {
+    gap: 22px;
+  }
+  .nav__link {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+  .nav__underline {
+    bottom: -8px;
+  }
 }
 
 @media (max-width: 480px) {
-  .nav__list { gap: 14px; }
-  .nav__link { font-size: 14px; }
+  .nav {
+    height: 64px;           /* aún más compacta en móvil */
+    padding: 0 14px;
+  }
+  .nav__logo {
+    height: 30px;
+  }
+  .nav__list {
+    gap: 14px;
+  }
+  .nav__link {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+  .nav__underline {
+    bottom: -6px;
+  }
 }
